@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AndroidCryptoTracker</string>
+
+    <!--Content Description-->
+    <string name="cd_fragment_home_exchange_iv">Visual showing the increase and decrease status of the price</string>
+    <string name="cd_fragment_home_currency_image">Currency Image</string>
+
+    <!--WebSocket State-->
+    <string name="ws_connected">Connected</string>
+    <string name="ws_connecting">Connecting</string>
+    <string name="ws_disconnected">Disconnected</string>
+    <string name="ws_disconnecting">Disconnecting</string>
+    <string name="ws_error">Error %s</string>
 </resources>

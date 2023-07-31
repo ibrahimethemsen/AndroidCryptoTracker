@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <ProgressBar
+                android:id="@+id/btc_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btc_progress_description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/btc_progress"
+                app:layout_constraintStart_toStartOf="@+id/btc_progress"
+                app:layout_constraintTop_toBottomOf="@+id/btc_progress"
+                tools:text="Connected" />
+
+            <ImageView
+                android:id="@+id/btc_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cd_fragment_home_currency_image"
+                android:src="@drawable/ic_btc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btc_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btc_icon_iv"
+                app:layout_constraintEnd_toStartOf="@+id/btc_exchange_iv"
+                app:layout_constraintStart_toEndOf="@+id/btc_icon_iv"
+                app:layout_constraintTop_toTopOf="@+id/btc_icon_iv"
+                tools:text="29232.00" />
+
+            <ImageView
+                android:id="@+id/btc_exchange_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cd_fragment_home_exchange_iv"
+                app:layout_constraintBottom_toBottomOf="@+id/btc_icon_iv"
+                app:layout_constraintEnd_toStartOf="@+id/btc_exchange_value_tv"
+                app:layout_constraintTop_toTopOf="@+id/btc_icon_iv"
+                tools:src="@drawable/arrow_down" />
+
+            <TextView
+                android:id="@+id/btc_exchange_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btc_exchange_iv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btc_exchange_iv"
+                tools:text="-1.2" />
+
+            <TextView
+                android:id="@+id/btc_error_message_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Bir hata oluştu" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/btc_progress_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="btc_progress,btc_progress_description_tv" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/btc_price_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="btc_exchange_iv,btc_exchange_value_tv,btc_icon_iv,btc_price_tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_fragment_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/adapter_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

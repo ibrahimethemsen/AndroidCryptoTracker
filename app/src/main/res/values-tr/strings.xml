@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidCryptoTracker</string>
+
+    <!--Content Description-->
+    <string name="cd_fragment_home_exchange_iv">Fiyatın artış ve düşüş durumunu gösteren görsel</string>
+    <string name="cd_fragment_home_currency_image">Para birimi görseli</string>
+
+    <!--WebSocket State-->
+    <string name="ws_connected">Bağlı</string>
+    <string name="ws_connecting">Bağlanıyor</string>
+    <string name="ws_disconnected">Bağlantı Kesildi</string>
+    <string name="ws_disconnecting">Bağlantıyı Kes</string>
+    <string name="ws_error">Hata %s</string>
+</resources>

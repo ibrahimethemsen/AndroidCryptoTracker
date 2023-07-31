@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="4dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardElevation="2dp"
+    android:layout_marginVertical="4dp"
+    android:layout_marginHorizontal="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/adapter_web_site_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WebSite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/adapter_web_site_url_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="@+id/adapter_web_site_tv"
+            app:layout_constraintStart_toEndOf="@+id/adapter_price_tv"
+            app:layout_constraintTop_toBottomOf="@+id/adapter_web_site_tv"
+            tools:text="btc" />
+
+        <TextView
+            android:id="@+id/adapter_price_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/adapter_price_symbol"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/adapter_web_site_url_tv"
+            tools:text="Bitcoin" />
+
+        <TextView
+            android:id="@+id/adapter_price_symbol"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/adapter_price_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/adapter_price_name"
+            app:layout_constraintTop_toTopOf="@+id/adapter_price_name"
+            tools:text="BTC" />
+
+        <TextView
+            android:id="@+id/adapter_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@+id/adapter_price_symbol"
+            app:layout_constraintTop_toTopOf="@+id/adapter_price_symbol"
+            tools:text="29232.00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
