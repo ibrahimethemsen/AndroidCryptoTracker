@@ -11,27 +11,34 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
+    @Singleton
     @Provides
     fun provideGson(): Gson = Gson()
 
+    @Singleton
     @Provides
     fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder().build()
 
+    @Singleton
     @Provides
     fun provideWebSocketRequest(): Request {
         return Request.Builder().url(SOCKET_URL).build()
     }
 
+    @Singleton
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder().baseUrl(BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create()).build()
     }
 
+    @Singleton
     @Provides
     fun provideRestfulService(
         retrofit: Retrofit
